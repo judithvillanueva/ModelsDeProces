@@ -1,0 +1,15 @@
+{% extends "recursosBiblio/base.html" %}
+{% block title %}
+- PAGINA PRINCIPAL
+{% endblock %}
+{% block content % }
+<h1>
+    LLIBRES
+</h1>
+<ul>
+    {% for Book in AllBooks %}
+        {{Book.ISBN}} - {{ Book.titol}}
+    {% empty %} <li> Sorry, the database does not have any Books yet!</li>
+    {% endfor %}
+
+</ul>
