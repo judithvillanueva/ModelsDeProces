@@ -20,6 +20,21 @@
     {%  endif  %}
     {%  endblock  %}
     </div>
+    <div id="sidebar">
+        {%  block  sidebar  %}
+        Buscadors:
+        <form action="{%  url  'recursosBiblio:buscador'  %}" method="post" >
+            {% csrf_token %}
+            <input type="text" name="buscar">
+            <select name="opcions">
+                <option value="Book">Llibre</option>
+                <option value="Author">Autor</option>
+                <option>Biblioteca</option>
+            </select>
+        <input type="submit" value="Search" />
+        </form>
+        {%  endblock  %}
+    </div>
     <div  id="content">
     {%  block  content  %}
     {%  if  error_message  %}

@@ -1,0 +1,25 @@
+{% extends "recursosBiblio/base.html" %}
+{% block title %}
+- RESULTATS BUSQUEDA
+{% endblock %}
+{% block content %}
+<h1>
+    RESULTATS BUSQUEDA
+</h1>
+<ul>
+    {% for result in resultats %}
+    {% if tipus == 'Book' %}
+    Llibres trobats:
+    <li>{{result.ISBN}} - {{ result.titol}}</li>
+    {% elif tipus == 'Author' %}
+    Autors trobats:
+    <li>{{result.nom}} - {{ result.cognom}} - {{ result.nacionalidad}}</li>
+    {% elif tipus == 'Biblioteca' %}
+    Autors trobats:
+    <li>{{result.nom}} - {{ result.ciutat}} - {{ result.carrer}}</li>
+    {% endif %}
+    {% empty %} <li> Sorry, there isn't a register with that type and name yet!</li>
+    {% endfor %}
+
+</ul>
+{% endblock %}
