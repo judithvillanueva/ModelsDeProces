@@ -10,7 +10,7 @@
     {% for result in resultats %}
     {% if tipus == 'Book' %}
     Llibres trobats:
-    <li>{{result.ISBN}} - {{ result.titol}}</li>
+    <li>{{result.ISBN}} - {{ result.titol}} - {{result.author}} </li>
     {% elif tipus == 'Author' %}
     Autors trobats:
     <li>{{result.nom}} - {{ result.cognom}} - {{ result.nacionalidad}}</li>

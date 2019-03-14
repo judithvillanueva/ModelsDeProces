@@ -25,7 +25,7 @@ class Book (models.Model) :
     genere = models.TextField()
     edicio = models.TextField()
     numpages = models.IntegerField()
-    author = models.ManyToManyField(Author, related_name='escrit_per')
+    author = models.ForeignKey(Author, related_name='escrit_per', on_delete=models.PROTECT)
     biblioteca=models.ManyToManyField(Biblioteca, related_name='disposa_de')
 
 
