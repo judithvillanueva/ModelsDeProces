@@ -1,0 +1,20 @@
+{% extends "recursosBiblio/base.html" %}
+{% block title %}
+- PAGINA PRINCIPAL
+{% endblock %}
+{% block content %}
+<h1>
+    Pagina principal
+</h1>
+<h3>
+    Últims llibres publicats:
+</h3>
+<ul>
+    {% for Book in llibres %} [:5]
+    <li>{{Book.ISBN}} - {{ Book.titol}}</li>
+    {% empty %} <li> Sorry, the database does not have any Books yet!</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

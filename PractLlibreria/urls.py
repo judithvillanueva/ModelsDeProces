@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^Biblioteca/', include(('recursosBiblio.urls', 'recursosBiblio'), namespace='recBib')),
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
-    # url(r'^$', TemplateView.as_view(template_name="recursosBiblio/templates/recursosBiblio/AllBooks.html"), name="Allbooks"),
+    # url(r'^$', TemplateView.as_view(template_name="recursosBiblio/templates/recursosBiblio/llibres.html"), name="Allbooks"),
 
 ]

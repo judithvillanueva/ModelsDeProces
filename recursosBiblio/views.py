@@ -6,7 +6,7 @@ from .models import *
 
 # Create your views here.
 
-print('Biblioteca')
+
 
 def buscador(request):
     option = request.POST['opcions']
@@ -27,3 +27,5 @@ def buscador(request):
         dictio = {'resultats': resultats,
                   'tipus': option}
         return render(request=request, template_name="recursosBiblio/resultats.html", context=dictio)
+
+

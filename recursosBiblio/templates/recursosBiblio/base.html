@@ -22,7 +22,7 @@
     </div>
     <div id="sidebar">
         {%  block  sidebar  %}
-        Buscadors:
+        <h3>Buscadors:</h3>
         <form action="{%  url  'recursosBiblio:buscador'  %}" method="post" >
             {% csrf_token %}
             <input type="text" name="buscar">
@@ -33,6 +33,10 @@
             </select>
         <input type="submit" value="Search" />
         </form>
+        <h3>Enllaços: </h3>
+        <a href="{%  url  'recursosBiblio:llibres'  %}">
+            <li><h5>Llibres</h5></li>
+        </a>
         {%  endblock  %}
     </div>
     <div  id="content">
