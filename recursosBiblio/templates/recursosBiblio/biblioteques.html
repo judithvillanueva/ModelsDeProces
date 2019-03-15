@@ -1,0 +1,29 @@
+{% extends "recursosBiblio/base.html" %}
+{% block title %}
+- BIBLIOTEQUES
+{% endblock %}
+{% block content %}
+<h1>
+    Biblioteques
+</h1>
+<ul>
+    <table class="egt" border="2">
+        <tr>
+            <td>  <h4>NOM </h4> </td>
+            <td>  <h4>CIUTAT </h4> </td>
+            <td>  <h4>CODI POSTAL </h4> </td>
+            <td>  <h4>CARRER </h4> </td>
+        </tr>
+        {% for biblio in biblios %}
+        <tr>
+            <td>  {{ biblio.nom}}  </td>
+            <td>  {{ biblio.ciutat}}  </td>
+            <td>  {{ biblio.codi_postal}}  </td>
+            <td>  {{ biblio.carrer}}  </td>
+        </tr>
+    </table>
+    {% empty %} Sorry, the database does not have any biblio yet!
+    {% endfor %}
+
+</ul>
+{% endblock %}

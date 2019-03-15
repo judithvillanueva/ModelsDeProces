@@ -27,3 +27,7 @@ textarea, input[type=number], input[type=url]
     height: 1.25em;
     width: 25em;
 }
+
+table, tr, td {
+    border-bottom: antiquewhite 1px solid;
+}

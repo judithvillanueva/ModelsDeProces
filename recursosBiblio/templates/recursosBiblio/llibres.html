@@ -1,15 +1,32 @@
 {% extends "recursosBiblio/base.html" %}
 {% block title %}
-- PAGINA PRINCIPAL
+- LLIBRES
 {% endblock %}
 {% block content %}
 <h1>
     LLIBRES
 </h1>
 <ul>
-    {% for Book in AllBooks %}
-    <li>{{Book.ISBN}} - {{ Book.titol}}</li>
-    {% empty %} <li> Sorry, the database does not have any Books yet!</li>
+    <table class="egt" border="1">
+        <tr>
+            <td>  <h4>ISBN </h4> </td>
+            <td>  <h4>TITOL </h4> </td>
+            <td>  <h4>GENERE </h4> </td>
+            <td>  <h4>EDICIO </h4> </td>
+            <td>  <h4>NUMERO DE PAGINES </h4> </td>
+            <td>  <h4>AUTOR </h4> </td>
+        </tr>
+        {% for Book in llibres %}
+        <tr>
+            <td>  {{ Book.ISBN}}  </td>
+            <td>  {{ Book.titol}}  </td>
+            <td>  {{ Book.genere}}  </td>
+            <td>  {{ Book.edicio}}  </td>
+            <td>  {{ Book.numpages}}  </td>
+            <td>  {{ Book.author}}  </td>
+        </tr>
+    </table>
+    {% empty %} Sorry, the database does not have any Books yet!
     {% endfor %}
 
 </ul>

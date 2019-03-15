@@ -10,9 +10,9 @@
     Últims llibres publicats:
 </h3>
 <ul>
-    {% for Book in llibres %} [:5]
-    <li>{{Book.ISBN}} - {{ Book.titol}}</li>
-    {% empty %} <li> Sorry, the database does not have any Books yet!</li>
+    {% for Book in llibres %}
+    {{Book.ISBN}} - {{ Book.titol}} - {{ Book.genere}}
+    {% empty %} Sorry, the database does not have any Books yet!
     {% endfor %}
 
 </ul>

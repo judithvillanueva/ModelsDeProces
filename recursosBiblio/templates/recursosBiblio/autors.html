@@ -1,0 +1,28 @@
+{% extends "recursosBiblio/base.html" %}
+{% block title %}
+- AUTORS
+{% endblock %}
+{% block content %}
+<h1>
+    Autors
+</h1>
+<ul>
+    <table class="egt">
+        <tr>
+            <td>  <h4>NOM </h4> </td>
+            <td>  <h4>COGNOM </h4> </td>
+            <td>  <h4>NACIONALITAT </h4> </td>
+        </tr>
+        {% for autor in autors %}
+        <tr>
+            <td>  {{ autor.nom}}  </td>
+            <td>  {{ autor.cognom}}  </td>
+            <td>  {{ autor.nacionalidad}}  </td>
+
+        </tr>
+    </table>
+    {% empty %} Sorry, the database does not have any author yet!
+    {% endfor %}
+
+</ul>
+{% endblock %}

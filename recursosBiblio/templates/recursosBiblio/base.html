@@ -22,6 +22,9 @@
     </div>
     <div id="sidebar">
         {%  block  sidebar  %}
+        <a href="{%  url  'recursosBiblio:home'  %}">
+            <h4>Home</h4>
+        </a>
         <h3>Buscadors:</h3>
         <form action="{%  url  'recursosBiblio:buscador'  %}" method="post" >
             {% csrf_token %}
@@ -36,6 +39,12 @@
         <h3>Enllaços: </h3>
         <a href="{%  url  'recursosBiblio:llibres'  %}">
             <li><h5>Llibres</h5></li>
+        </a>
+        <a href="{%  url  'recursosBiblio:autors'  %}">
+            <li><h5>Autors</h5></li>
+        </a>
+        <a href="{%  url  'recursosBiblio:biblioteques'  %}">
+            <li><h5>Biblioteques</h5></li>
         </a>
         {%  endblock  %}
     </div>
