@@ -11,19 +11,19 @@ from .models import *
 def buscador(request):
     option = request.POST['opcions']
     if option == "Book":
-        resultats = Book.objects.filter(titol=request.POST['buscar'])
+        resultats = Book.objects.filter(titol__contains=request.POST['buscar'])
         dictio = {'resultats': resultats,
                   'tipus': option}
         return render(request=request, template_name="recursosBiblio/resultats.html", context=dictio)
 
     elif option == "Author":
-        resultats = Author.objects.filter(nom=request.POST['buscar'])
+        resultats = Author.objects.filter(nom__contains=request.POST['buscar'])
         dictio = {'resultats': resultats,
                   'tipus': option}
         return render(request=request, template_name="recursosBiblio/resultats.html", context=dictio)
 
     elif option == "Biblioteca":
-        resultats = Biblioteca.objects.filter(nom=request.POST['buscar'])
+        resultats = Biblioteca.objects.filter(nom__contains=request.POST['buscar'])
         dictio = {'resultats': resultats,
                   'tipus': option}
         return render(request=request, template_name="recursosBiblio/resultats.html", context=dictio)
