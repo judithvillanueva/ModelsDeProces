@@ -38,4 +38,12 @@ urlpatterns = [
             context_object_name='biblios',  # nom del diccionari
             template_name='recursosBiblio/biblioteques.html'),  # posem el nom del html i on ho va a buscar
         name='biblioteques'),
+
+    url(r'^autors/(?P<pk>\d+)/$',
+        detalls_autor,
+        name='detalls_autor'),
+
+    url(r'^biblioteques/(?P<pk>\d+)/$',
+        detalls_biblio,
+        name='detalls_biblio'),
 ]

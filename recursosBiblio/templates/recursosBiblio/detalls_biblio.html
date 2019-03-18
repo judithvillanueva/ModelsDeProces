@@ -1,10 +1,10 @@
 {% extends "recursosBiblio/base.html" %}
 {% block title %}
-- LLIBRES
+- DETALLS BIBLIO
 {% endblock %}
 {% block content %}
 <h1>
-    LLIBRES
+    {{ biblio.nom }} {{ autor.ciutat }}
 </h1>
 
 <table border="2">
@@ -14,7 +14,6 @@
         <td>  <h4>GENERE </h4> </td>
         <td>  <h4>EDICIO </h4> </td>
         <td>  <h4>NUMERO DE PAGINES </h4> </td>
-        <td>  <h4>AUTOR </h4> </td>
     </tr>
     {% for Book in llibres %}
     <tr>
@@ -23,11 +22,10 @@
         <td>  {{ Book.genere}}  </td>
         <td>  {{ Book.edicio}}  </td>
         <td>  {{ Book.numpages}}  </td>
-        <td>  {{ Book.author.nom}}  </td>
+
     </tr>
-{% empty %} Sorry, the database does not have any Books yet!
+{% empty %} Sorry, the biblio hasn't got any book yet!
 {% endfor %}
 </table>
-
 
 {% endblock %}

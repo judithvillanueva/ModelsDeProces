@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "recursosBiblio/base.html" %}
+{% block title %}
+- DETALLS AUTOR
+{% endblock %}
+{% block content %}
+<h1>
+    {{ autor.nom }} {{ autor.cognom }}
+</h1>
 
-</body>
-</html>
+<table border="2">
+    <tr>
+        <td>  <h4>ISBN </h4> </td>
+        <td>  <h4>TITOL </h4> </td>
+        <td>  <h4>GENERE </h4> </td>
+        <td>  <h4>EDICIO </h4> </td>
+        <td>  <h4>NUMERO DE PAGINES </h4> </td>
+    </tr>
+    {% for Book in llibres %}
+    <tr>
+        <td>  {{ Book.ISBN}}  </td>
+        <td>  {{ Book.titol}}  </td>
+        <td>  {{ Book.genere}}  </td>
+        <td>  {{ Book.edicio}}  </td>
+        <td>  {{ Book.numpages}}  </td>
+
+    </tr>
+
+{% empty %} Sorry, the author hasn't written any book yet!
+{% endfor %}
+</table>
+
+{% endblock %}

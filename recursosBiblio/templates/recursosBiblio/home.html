@@ -11,7 +11,7 @@
 </h3>
 <ul>
     {% for Book in llibres %}
-    {{Book.ISBN}} - {{ Book.titol}} - {{ Book.genere}}
+    {{Book.ISBN}} - {{ Book.titol}} - {{ Book.genere}} <br>
     {% empty %} Sorry, the database does not have any Books yet!
     {% endfor %}
 
